@@ -1,0 +1,54 @@
+body {
+  background-color: rgb(255, 255, 255);
+}
+.result {
+  text-align: right;
+  background-color: rgb(255, 255, 255);
+  margin: 1vh 1vw;
+  min-width: 90vw;
+  max-width: 90vw;
+  min-height: 12vh;
+  max-height: 12vh;
+  font-size: 10vh;
+  border: rgb(255, 255, 255) 2px;
+  box-sizing: border-box;
+  background-color: #d9d9d9;
+  border: none;
+  border: 2px solid RED;
+  border-radius: 1vw;
+  text-anchor: start;
+}
+.numbers {
+  border: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(250, 0, 0);
+  background-color: rgb(231, 231, 231);
+  margin: 0.2vh 0.2vw;
+  min-width: 24vw;
+  max-width: 24vw;
+  min-height: 16vh;
+  max-height: 16vh;
+  font-size: 10vh;
+  border-radius: 2vw;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.numbers:hover {
+  background-color: rgb(212, 212, 212);
+  border: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(250, 0, 0);
+}
+.numbers:active {
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+.eq {
+  margin: 0.2vh 0.2vw;
+  min-height: 16vh;
+  max-height: 16vh;
+  min-width: 48vw;
+  max-width: 60.5vw;
+  font-size: 10vh;
+  border-radius: 2vw;
+  margin-left: 0px;
+  margin-right: 0px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html><html><link rel="stylesheet" media="screen and (min-width: 600px)" href="wide.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="phone.css"><style>
+
+</style>
+    <body><center>
+<button class="result" id="result">0</button><br>
+<button class="numbers"onclick="number(7)">7</button><button class="numbers"onclick="number(8)">8</button><button class="numbers"onclick="number(9)">9</button><br>
+<button class="numbers"onclick="number(4)">4</button><button class="numbers"onclick="number(5)">5</button><button class="numbers"onclick="number(6)">6</button><br>
+<button class="numbers"onclick="number(1)">1</button><button class="numbers"onclick="number(2)">2</button><button class="numbers"onclick="number(3)">3</button><br>
+<button class="numbers"onclick="number(0)">0</button><button class="eq" onclick="empty()">Clear</button><br>
+<button class="numbers"onclick="add()">+</button><button class="eq"onclick="equals()">=</button><br>
+<button class="numbers"onclick="sub()">-</button><button class="numbers"onclick="multi()">X</button><button class="numbers"onclick="div()">/</button><br>
+   </center> </body></html><script>
+       let current=0;
+       let operation;
+       let first;
+function number(number){
+     current=Number(current+String(number));
+     document.getElementById('result').innerHTML = current
+
+}
+function empty(){            
+    current=0;
+     operation=0;
+    first=0;
+     document.getElementById('result').innerHTML = 0;
+
+}
+function add(){
+    first=current;
+    operation = "add";
+    document.getElementById('result').innerHTML = "+";
+    current=0;
+}
+function sub(){
+    first=current;
+    operation = "sub";
+    document.getElementById('result').innerHTML = "-";
+    current=0;
+}
+function multi(){
+    first=current;
+    operation = "multi";
+    document.getElementById('result').innerHTML = "*";
+    current=0;
+}
+function div(){
+    first=current;
+    operation = "div";
+    document.getElementById('result').innerHTML = "/";
+    current=0;
+}
+function equals(){
+    if (operation=="add") {
+        document.getElementById('result').innerHTML = first+current;
+    }else if(operation=="sub"){
+        document.getElementById('result').innerHTML = first-current;
+    }else if(operation=="multi"){
+        document.getElementById('result').innerHTML = first*current;
+    }else if(operation=="div"){
+        document.getElementById('result').innerHTML = first/current;
+    }else{
+        document.getElementById('result').innerHTML = "error pick operation";
+    }
+            current=0;
+        operation=0;
+        first=0;
+}
+
+
+
+
+</script>
