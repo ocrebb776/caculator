@@ -1,81 +1,95 @@
 <!DOCTYPE html><html><link rel="stylesheet" media="screen and (min-width: 750px)" href="wide.css">
-<link rel="stylesheet" media="screen and (max-width: 750px)" href="phone.css"><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen and (max-width: 750px)" href="phone.css">
+<script src="main.js"></script>
+<script src="percentage.js"></script>  
 
+
+
+<style>
+    .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.page {
+
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
 </style>
+
     <body><center>
-<div class="result" ><button class="m l">M+</button><button class="m">M</button><a id="result">0</a></div><br>
+<div class="result" ondblclick="extra()"><button class="m l" onclick="save()">M+</button><button class="m" onclick="load()">M</button><button class="m" onclick="extra()">extra</button><a id="result">0</a></div><br>
 <button class="numbers"onclick="number(7)">7</button><button class="numbers"onclick="number(8)">8</button><button class="numbers"onclick="number(9)">9</button><button class="numbers"onclick="add()">+</button><br>
 <button class="numbers"onclick="number(4)">4</button><button class="numbers"onclick="number(5)">5</button><button class="numbers"onclick="number(6)">6</button><button class="numbers"onclick="sub()">-</button><br>
 <button class="numbers"onclick="number(1)">1</button><button class="numbers"onclick="number(2)">2</button><button class="numbers"onclick="number(3)">3</button><button class="numbers"onclick="multi()">X</button><br>
 <button class="eq" onclick="equals()"><b>=</b></button><button class="numbers"onclick="number(0)">0</button><button class="numbers"onclick="div()">/</button><br> 
 <button class="eq"onclick="empty()">Clear</button><button class="numbers"onclick="decimal()">.</button><button class="numbers"onclick="negitive()"><b>-</b></button><br> </center>
 
- </body></html><script>
-       let current=0;
-       let operation;
-       let first;
-function decimal(){
-    current=current+'.';
-     document.getElementById('result').innerHTML = current 
-} 
-function number(number){
-     current=Number(current+String(number));
-     document.getElementById('result').innerHTML = current
 
-}
-function negitive(){
-    current-=current*2
-    document.getElementById('result').innerHTML = current
-}
-function empty(){            
-    current=0;
-     operation=0;
-    first=0;
-     document.getElementById('result').innerHTML = 0;
 
-}
-function add(){
-    first=current;
-    operation = "add";
-    document.getElementById('result').innerHTML = "+";
-    current=0;
-}
-function sub(){
-    first=current;
-    operation = "sub";
-    document.getElementById('result').innerHTML = "-";
-    current=0;
-}
-function multi(){
-    first=current;
-    operation = "multi";
-    document.getElementById('result').innerHTML = "*";
-    current=0;
-}
-function div(){
-    first=current;
-    operation = "div";
-    document.getElementById('result').innerHTML = "/";
-    current=0;
-}
-function equals(){
-    if (operation=="add") {
-        document.getElementById('result').innerHTML = first+current;
-    }else if(operation=="sub"){
-        document.getElementById('result').innerHTML = first-current;
-    }else if(operation=="multi"){
-        document.getElementById('result').innerHTML = first*current;
-    }else if(operation=="div"){
-        document.getElementById('result').innerHTML = first/current;
-    }else{
-        document.getElementById('result').innerHTML = "error pick operation";
-    }
-            current=0;
-        operation=0;
-        first=0;
-}
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="percentage.html">percentage of</a>
+      <a onclick="aler()">what percentage is x of y</a>
+      <a onclick="aler()">meter and miles conversions</a>
+      <a onclick="aler()">more</a>
+    </div>
+  </div>
 
 
 
-
-</script>
+ </body></html>
+ <form name="myForm"  onsubmit="return validateForm()" >
+    enter a number<input type="text" name="n">
+              </form>
+              <form name="myForm"  onsubmit="return validateForm()" >
+    enter the percentage<input type="text" name="p">%
+    <button> f</button>
+              </form>
